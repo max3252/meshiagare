@@ -16,15 +16,15 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column           | Type   | Options     |
-| ---------------- | ------ | ----------- |
-| nickname         | string | null: false |
-| email            | string | null: false |
-| password         | string | null: false |
-| prefecture_id    | integer| null: false |
-| gender_id        | integer| null: false |
-| age_id           | integer| null: false |
-| allergies        | text   | null: false |
+| Column           | Type    | Options     |
+| ---------------- | ------  | ----------- |
+| nickname         | string  | null: false |
+| email            | string  | null: false |
+| password         | string  | null: false |
+| prefecture_id    | integer | null: false |
+| gender_id        | integer | null: false |
+| age_id           | integer | null: false |
+| allergies        | text    | null: false |
 
 
 ### Association
@@ -34,16 +34,17 @@ Things you may want to cover:
 
 ## posts テーブル
 
-| Column           | Type   | Options     |
-| ---------------- | ------ | ----------- |
-| image            | string | null: false |
-| name             | string | null: false |
-| genre_id         | integer| null: false |
-| allergies        | text   | null: false |
-| store_name       | string | null: false |
-| price            | integer| null: false |
-| address          | string | null: false |
-| text             | text   | null: false |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| image            | string     | null: false                    |
+| name             | string     | null: false                    |
+| genre_id         | integer    | null: false                    |
+| allergies        | text       | null: false                    |
+| store_name       | string     | null: false                    |
+| price            | integer    | null: false                    |
+| address          | string     |                                |
+| text             | text       | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 
