@@ -1,0 +1,138 @@
+<%= render "devise/shared/header" %>
+<div class='main'>
+  <div class='title-contents'>
+  <div class="slider">
+    <%= image_tag 'meshiagare.jpg', class: "slider" %>
+    <%#= image_tag 'meshiagare.top03.png' %>
+    <%#= image_tag 'meshiagare-header01.jpeg' %>
+  </div>
+  </div>
+
+ <div class='item-contents'>
+    <h2 class='title'>新着投稿一覧</h2>
+    <ul class='item-lists'>
+      <%# @posts.each do |post| %>
+        <li class='list'>
+        <%# if post.image.present? %>
+          <%#= link_to  item_path(item.id) do %>
+          <div class='item-img-content'>
+            <%#= image_tag item.image, class: "item-img" %>
+              <%# end %>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%#= item.name %>
+              </h3>
+              <div class='item-price'>
+                <span><%#= item.price %>円<br>(税込み)</span>
+                <div class='star-btn'>
+                  <%#= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%# end %>
+        <%# ダミー画像 %>
+        <%# else %>
+        <%#= link_to '#' do %>
+          <%#= image_tag "dummy.jng", class: "item-img" %>
+          <div class='item-info'>
+             <h3 class='item-name'>
+                商品を出品してね！
+             </h3>
+            <div class='item-price'>
+              <span>99999999円<br>(税込み)</span>
+              <div class='star-btn'>
+                <%#= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
+              </div>
+            </div>
+          </div>
+        <%# end %>
+        <%# end %>
+        </li>
+      <%# end %>
+    </ul>
+  </div>
+</div>
+  <div class='ad-contents'>
+    <h2 class='ad-title'>
+    topics
+    </h2>
+    <a href="http://www.nibiohn.go.jp/eiken/linkdediet/news/FMPro%3F-db=NEWS.fp5&-Format=detail.htm&kibanID=67253&-lay=lay&-Find.html" class="cp_link">
+      ■食物アレルギー新治療法への道、プロバイオティクスで
+    </a>
+    <a href="https://www.asahi.com/articles/ASM495S04M49UBQU016.html" class="cp_link">
+      ■食物アレルギーの経口免疫療法 なぜまだ「研究」なの？
+    </a>
+    <a href="https://www.foodallergy.jp/info/%e7%ac%ac21%e5%9b%9e%e9%a3%9f%e7%89%a9%e3%82%a2%e3%83%ac%e3%83%ab%e3%82%ae%e3%83%bc%e7%a0%94%e7%a9%b6%e4%bc%9a%ef%bc%882021%e5%b9%b42%e6%9c%8814%e6%97%a5%e9%96%8b%e5%82%ac%ef%bc%89/" class="cp_link">
+      ■第21回食物アレルギー研究会（2021年2月14日開催）
+    </a>
+  </div>
+
+  <div class='feature-contents'>
+    <h2 class='title'>
+      アプリ開発者の思い
+    </h2>
+    <ul class='feature-lists'>
+      <li class='list'>
+        <%= image_tag "meshiagare.intro01.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          安全に食事ができる
+        </h3>
+        <p class='feature-list-description'>
+          食物アレルギー持ちの方は毎日の食事に気を使います。
+          万が一、口にアレルゲン物質が入ってしまうと大変なことになりかねません。
+          アレルギーをお持ちの人達が安心して食事ができる世の中になることを願います。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "meshiagare.intro02.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          食物アレルギーへの関心
+        </h3>
+        <p class='feature-list-description'>
+          食物アレルギーは今やめずらしいものではなく、日本では全人口の1～2％(乳児に限定すると約10％)
+          の方々が何らかの食物アレルギーを持っているものとされています。
+          食物アレルギーに対してもっと関心を持つこと、そしてアレルギー持ちの人達へ十分な配慮を心がけましょう。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "meshiagare.intro03.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          アプリの削除
+        </h3>
+        <p class='feature-list-description'>
+          医療技術が著しく進歩していく現代では、食物アレルギーに対する治療法や研究も進められています。いつの日か食物アレルギーという言葉がなくなる日が来るかも知れません。
+          このアプリが必要ではなくなる未来がくることを願います。
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  
+<%# if user_signed_in? %>
+  <!-- div class='purchase-btn' -->
+    <!-- span class='purchase-btn-text'>出品する</span -->
+    <!-- a href="/items/new" -->
+      <%#= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <!--/a-->
+  <!--/div-->
+<%# else %>
+    <div class='post-btn'>
+      <span class='post-btn-text'>投稿</span>
+      <a href="#">
+        <%= image_tag 'post.png' , size: '185x50' ,class: "post-btn-icon" %>
+      </a>
+      <span class='post-btn-text'>検索</span>
+      <a href="#">
+        <%= image_tag 'search.png' , size: '185x50' ,class: "post-btn-icon" %>
+      </a>
+    </div>
+    <div class='search-btn'>
+      
+    </div>
+
+ <%# end %> 
+
+<%= render "devise/shared/footer" %>

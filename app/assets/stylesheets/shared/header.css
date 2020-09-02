@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+.app-text {
+  margin: 0px 0px;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  color: darkgray;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 0vh 10vw;
+  display: flex;
+  flex-direction: column;
+  background-color :white;
+  position: fixed;
+  z-index: 9999;
+}
+
+
+
+.top-bar-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meshiagare-icon {
+  width: 15vw;
+  margin-right: 10vw;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 8vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 8vw;
+  color: #333333;
+}
+
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
