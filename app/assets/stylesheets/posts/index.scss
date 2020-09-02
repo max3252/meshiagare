@@ -9,21 +9,22 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('furima-header01.png');
+  height: 95vh;
+  /*background-image: image-url('meshiagare.jpg');*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
   color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  /*text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);*/
 }
 
 .service-title {
-  font-size: 8vh;
+  font-size: 5vh;
 }
 
 .service-explain {
@@ -31,19 +32,11 @@ a {
   line-height: 40px;
 }
 
-.store-btn {
-  display: flex;
-  margin-top: 24px;
+.slider{
+  width: 100vw;
+  height: 90vh;
 }
 
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
-}
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
 
@@ -133,100 +126,57 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color: black;
+  
 }
 
 .ad-title {
   font-size: 5vh;
   margin-bottom: 2vh;
+  font-family:'Noto Sans JP', sans-serif;
 }
 
 .ad-explain {
-  font-size: 2.5vh;
+  font-size: 4vh;
   line-height: 30px;
 }
 
-.store-btn {
-  display: flex;
-  margin-top: 24px;
+.cp_link {
+	padding: 0.1em 0.3em;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(255, 251, 0) 50%);
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: .3s;
+  color: black;
+  font-size: 20px;
 }
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
+.cp_link:hover {
+	background-position: -100% 0;
+	color: black;
 }
-
-.google-btn {
-  height: 9vh;
-}
-
-/* //画面中央の「会員数日本一位」帯部分 */
-
-/* FURIMAの特徴 */
-.feature-contents {
-  padding: 5vh 15vw;
-}
-
-.feature-contents>.title {
-  text-align: center;
-  font-size: 3.5vh;
-  font-weight: bold;
-  margin-bottom: 5vh;
-  position: relative;
-}
-
-.feature-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 4px;
-  background-color: #3ccace;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.feature-lists {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.feature-lists>.list {
-  width: 33vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.feature-list-text {
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 50px;
-}
-
-.feature-list-description {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-/* //FURIMAの特徴 */
 
 /* 商品一覧 */
 
 .item-contents {
-  background-color: #FFF;
+  width: 100vw;
+  background-image: image-url('furima-header02.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 10vh 0;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: black;
+  /*text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);*/
 }
 
 .item-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
+  font-family:'Noto Sans JP', sans-serif;
 }
 
 .item-contents>.subtitle {
@@ -259,22 +209,6 @@ a {
   width: 33vh;
   height: 33vh;
 }
-
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
-
-.sold-out>span {
-  color: #FFF;
-  font-size: 45px;
-  font: bold;
-}
-
 
 .item-info {
   background-color: #FFF;
@@ -309,3 +243,64 @@ a {
 }
 
 /* //商品一覧 */
+
+/* //画面中央の「会員数日本一位」帯部分 */
+
+/* FURIMAの特徴 */
+.feature-contents {
+  padding: 5vh 15vw;
+  font-family:'Noto Sans JP', sans-serif;
+}
+
+.feature-contents>.title {
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.feature-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #FFF;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.feature-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-list-text {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 50px;
+}
+
+.feature-list-description {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.list-pict {
+  margin-bottom: 20px;
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+
+/* //FURIMAの特徴 */

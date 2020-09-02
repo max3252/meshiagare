@@ -58,3 +58,6 @@ gem 'pry-rails'
 gem 'devise'
 
 gem "aws-sdk-s3", require: false
+
+gem 'bxslider-rails'
+gem 'jquery-rails'
