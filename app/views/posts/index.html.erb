@@ -111,15 +111,8 @@
   </div>
 
   
-<%# if user_signed_in? %>
-  <!-- div class='purchase-btn' -->
-    <!-- span class='purchase-btn-text'>出品する</span -->
-    <!-- a href="/items/new" -->
-      <%#= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-    <!--/a-->
-  <!--/div-->
-<%# else %>
-    <div class='post-btn'>
+<% if user_signed_in? %>
+   <div class='post-btn'>
       <span class='post-btn-text'>投稿</span>
       <a href="#">
         <%= image_tag 'post.png' , size: '185x50' ,class: "post-btn-icon" %>
@@ -129,10 +122,17 @@
         <%= image_tag 'search.png' , size: '185x50' ,class: "post-btn-icon" %>
       </a>
     </div>
-    <div class='search-btn'>
-      
+<% else %>
+    <div class='post-btn'>
+      <span class='post-btn-text'>投稿</span>
+      <a href="/users/sign_in">
+        <%= image_tag 'post.png' , size: '185x50' ,class: "post-btn-icon" %>
+      </a>
+      <span class='post-btn-text'>検索</span>
+      <a href="/users/sign_in">
+        <%= image_tag 'search.png' , size: '185x50' ,class: "post-btn-icon" %>
+      </a>
     </div>
-
- <%# end %> 
+ <% end %> 
 
 <%= render "devise/shared/footer" %>

@@ -1,0 +1,12 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+       prefecture_id: 出身地
+       gender_id: 性別
+       age_id: 年齢
+       allergies: アレルギー
+     post:
+       text: テキスト
+       image: 画像
