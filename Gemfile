@@ -61,3 +61,7 @@ gem "aws-sdk-s3", require: false
 
 gem 'bxslider-rails'
 gem 'jquery-rails'
+
+gem 'active_hash'
+
+gem 'rails-i18n'
