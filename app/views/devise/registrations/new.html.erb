@@ -67,17 +67,19 @@
     </div>
     <div class='input-name-wrap'>
       <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+    </div>  
+     <div class='checkbox-text-wrap'>
+      <label class="checkbox-text">該当するアレルギー</label>
+      <span class="indispensable">必須</span>
     </div>
-    <!-- 複数チェックボックス -->
     <div class="field">
-    <% %w(卵 乳 小麦 えび かに そば 落花生 アーモンド アワビ いか いくら オレンジ カシューナッツ キウイフルーツ 牛肉 くるみ ごま 鮭 鯖 大豆 鶏肉 バナナ 豚肉 松茸 桃 やまいも リンゴ ゼラチン).each.with_index do |language,i| %>
-    <label>
-      <%= f.check_box  :language, {multiple: true}, language, nil %>
-      <%= language %>
-    </label>
-    <% end %>
-    <!-- 複数チェックボックス -->
-  </div>
+      <% %w(卵 乳 小麦 えび かに そば 落花生 アーモンド アワビ いか いくら オレンジ カシューナッツ キウイフルーツ 牛肉 くるみ ごま 鮭 鯖 大豆 鶏肉 バナナ 豚肉 松茸 桃 やまいも リンゴ ゼラチン 無).each.with_index do |allergies,i| %>
+      <label>
+        <%= f.check_box  :allergies, {multiple: true}, allergies, nil %>
+        <%= allergies %>
+      </label>
+      <% end %>
+    </div>
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
   </div>
   <div class="form-group">
@@ -88,7 +90,7 @@
     </h2>
   </div>
   <div class='register-btn'>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= f.submit "会員登録" ,class:"register-yellow-btn" %>
   </div>
   <p class='register-info'>本人情報の登録について</p>
 </div>
