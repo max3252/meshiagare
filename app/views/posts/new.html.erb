@@ -1,0 +1,109 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('meshiagare-logo.png' , size: '200x100'), "/" %>
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">メニュー情報を入力</h2>
+    <%= form_with model: @post, local: true do |f| %>
+
+    <%= render 'devise/shared/error_messages', model: @post %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+         <div class="form">
+        <div class="weight-bold-text">
+          ジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          Safetyアレルギー物質
+          <span class="indispensable">必須</span>
+        </div>
+        <p class="allergies-info">使われていないアレルギー物質を選択してください。<span class="br">(例)小麦粉不使用の米粉クッキーの場合は小麦をチェック!!</span></p>
+        <div class="field">
+          <% %w(卵 乳 小麦 えび かに そば 落花生 アーモンド アワビ いか いくら オレンジ カシューナッツ キウイフルーツ 牛肉 くるみ ごま 鮭 鯖 大豆 鶏肉 バナナ 豚肉 松茸 桃 やまいも リンゴ ゼラチン その他).each.with_index do |allergies,i| %>
+          <label>
+            <%= f.check_box  :allergies, {multiple: true}, allergies, nil %>
+            <%= allergies %>
+          </label>
+          <% end %>
+        </div>
+        <p class="references">消費者庁. 食品表示法等(法令及び一元化情報). https://www.caa.go.jp/policies/policy/food_labeling/food_labeling_act/,<span class="br"> (参照 2020-09-01)</span></p> 
+        <p class="allergies-attention-info"><span>※</span>その他にチェックを入れた場合はメニュー説明欄に補足情報のご記入お願いします。</p>
+      </div>
+      <div class="form">
+        <div class="weight-bold-text">
+          お店の名前
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"お店の名前（必須 40文字まで)", maxlength:"40" %>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"半角数字で入力" %>
+        </div>
+        <div class="weight-bold-text">
+          お店の住所
+          <span class="arbitrary">任意</span>
+        </div>
+        <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"お店の住所（必須 40文字まで)", maxlength:"40" %>
+    </div>
+    </div>
+    <div class="items-explain">
+        <div class="weight-bold-text">
+          メニューの説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"メニューの説明（必須 1,000文字まで）（ポイント、材料、味、安全性、注意点)例）特定原材料７品目を使っていない米粉でできているパスタです！ 香りもとってもいい匂いで麺がもちもちしていてとっても美味しいです！お店の方の配慮も完璧で安心できます！" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    <div class="caution">
+      <p class="sentence">
+        <a href="#">プライバシーポリシー</a>
+        と
+        <a href="#">利用規約</a>
+        を必ずご確認ください。
+      </p>
+      <p class="sentence">
+        また誤情報の記載には十分に注意してください。
+    </div>
+
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+
+  </div>
+  <% end %>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">Meshiagare利用規約</a></li>
+    </ul>
+    <%= link_to image_tag('meshiagare-logo.png' , size: '200x100'), "/" %>
+    <p class="inc">
+      ©︎Meshiagare,Inc.
+    </p>
+  </footer>
+</div>

@@ -15,7 +15,7 @@
       <label class="form-text">ニックネーム</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) meshiagare太郎", maxlength:"40" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -73,12 +73,13 @@
       <span class="indispensable">必須</span>
     </div>
     <div class="field">
-      <% %w(卵 乳 小麦 えび かに そば 落花生 アーモンド アワビ いか いくら オレンジ カシューナッツ キウイフルーツ 牛肉 くるみ ごま 鮭 鯖 大豆 鶏肉 バナナ 豚肉 松茸 桃 やまいも リンゴ ゼラチン 無).each.with_index do |allergies,i| %>
+      <% %w(卵 乳 小麦 えび かに そば 落花生 アーモンド アワビ いか いくら オレンジ カシューナッツ キウイフルーツ 牛肉 くるみ ごま 鮭 鯖 大豆 鶏肉 バナナ 豚肉 松茸 桃 やまいも リンゴ ゼラチン 無し).each.with_index do |allergies,i| %>
       <label>
         <%= f.check_box  :allergies, {multiple: true}, allergies, nil %>
         <%= allergies %>
       </label>
       <% end %>
+      <p class="references">消費者庁. 食品表示法等(法令及び一元化情報). https://www.caa.go.jp/policies/policy/food_labeling/food_labeling_act/,<span class="br"> (参照 2020-09-01)</span></p> 
     </div>
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
   </div>

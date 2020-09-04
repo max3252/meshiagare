@@ -2,7 +2,8 @@
 <div class='main'>
   <div class='title-contents'>
   <div class="slider">
-    <%= image_tag 'meshiagare.jpg', class: "slider" %>
+    <img id="mypic" data-src="images/meshiagare.jpg" width="100px" height="90px" class="slider">
+    <%#= image_tag 'meshiagare.jpg', class: "slider" %>
     <%#= image_tag 'meshiagare.top03.png' %>
     <%#= image_tag 'meshiagare-header01.jpeg' %>
   </div>
@@ -114,7 +115,7 @@
 <% if user_signed_in? %>
    <div class='post-btn'>
       <span class='post-btn-text'>投稿</span>
-      <a href="#">
+      <a href="/posts/new">
         <%= image_tag 'post.png' , size: '185x50' ,class: "post-btn-icon" %>
       </a>
       <span class='post-btn-text'>検索</span>
