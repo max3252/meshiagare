@@ -4,4 +4,24 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path(@user)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:image, :name, :genre_id , :store_name, :price, :address, :text, allergies: []).merge(user_id: current_user.id)
+  end
+
 end
+
