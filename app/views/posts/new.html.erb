@@ -20,6 +20,7 @@
         </p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
+      <div id="image-list"></div>
     </div>
     <div class="new-items">
       <div class="weight-bold-text">
@@ -54,7 +55,7 @@
           お店の名前
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"お店の名前（必須 40文字まで)", maxlength:"40" %>
+        <%= f.text_area :store_name, class:"items-text", id:"item-name", placeholder:"お店の名前（必須 40文字まで)", maxlength:"40" %>
         <div class="price-content">
           <div class="price-text">
             <span>価格</span>
@@ -67,7 +68,7 @@
           お店の住所
           <span class="arbitrary">任意</span>
         </div>
-        <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"お店の住所（必須 40文字まで)", maxlength:"40" %>
+        <%= f.text_area :address, class:"items-text", id:"item-name", placeholder:"お店の住所（必須 40文字まで)", maxlength:"40" %>
     </div>
     </div>
     <div class="items-explain">
