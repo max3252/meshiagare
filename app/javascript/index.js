@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-const pics_src = ["images/meshiagare.jpg","images/meshiagare.top03.png","images/meshiagare.top02.jpg"];
+const pics_src = ["images/meshiagare.top01.jpg","images/meshiagare.top03.jpg","images/meshiagare.top02.jpg"];
 let num = -1;
  
  
