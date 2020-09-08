@@ -1,0 +1,105 @@
+<%= render "devise/shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @post.name %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @post.image ,class:"item-box-img" %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+        ¥ <%= @post.price %>
+      </span>
+      <span class="item-postage">
+     
+      </span>
+    </div>
+
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+      <%= link_to '編集', edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', post_path(@post.id) , method: :delete, class:'item-destroy' %>
+    <% end %> 
+    <div class="item-explain-box">
+      <span><%= @post.text %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= @post.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ジャンル</th>
+          <td class="detail-value"><%= @post.genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">アレルギー情報</th>
+          <td class="detail-value"><%= @post.allergies %>不使用<span>※</span></td>
+        </tr>
+        <tr>
+          <th class="detail-item">お店の名前</th>
+          <td class="detail-value"><%= @post.store_name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">お店の住所</th>
+          <td class="detail-value"><%= @post.address %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="option">
+      <div class="favorite-btn">
+        <%#= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>Favorite 0</span>
+      </div>
+      <div class="thanks-btn">
+        <%#= image_tag "flag.png" ,class:"thanks-face-icon" ,width:"20",height:"20"%>
+        <span>Thanks!!</span>
+      </div>
+    </div>
+    <p class="option-warn">
+    ※アレルギー情報の記載に関しては、記載漏れ等の可能性もありますので、詳細は店舗様にて各自ご確認をお願いします。<span class="br">
+    </span>※投稿された食品はアレルギー症状が発生しないことをお約束するものではありません。ご利用いただくユーザー様の症状の程度や<span class="br">その日の体調により、微量の混入でもご発症される可能性もございます。</span>
+    <span class="br">以上のことから、当サイトとしてすべての責任を負いかねますのでご了承のほどお願い申し上げます。</span>
+    </p>
+  </div>
+
+  <div class="comment-box">
+    <% if current_user %>
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+          <%= form.text_area :text, placeholder: "コメントする", class:"comment-text", rows: "10" %>
+          <p class="comment-warn">
+            相手のことを考え丁寧なコメントを心がけましょう。
+            <br>
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          </p>
+          <%= form.submit "Comment", class:"comment-btn" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      <＜ previous
+    </a>
+    <a href="#" class="change-item-btn">
+      next ＞> 
+    </a>
+  </div>
+</div>
+
+<%= render "devise/shared/footer" %>

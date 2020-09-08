@@ -27,7 +27,7 @@
         タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"30" %>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
          <div class="form">
         <div class="weight-bold-text">
           ジャンル
@@ -38,7 +38,7 @@
           Safetyアレルギー物質
           <span class="indispensable">必須</span>
         </div>
-        <p class="allergies-info">【重要】使われていないアレルギー物質を選択してください。<span class="br">(例)小麦粉不使用の米粉クッキーの場合は小麦をチェック</span></p>
+        <p class="allergies-info">使われていないアレルギー物質を選択してください。<span class="br">(例)小麦粉不使用の米粉クッキーの場合は小麦をチェック!!</span></p>
         <div class="field">
           <% %w(卵 乳 小麦 えび かに そば 落花生 アーモンド アワビ いか いくら オレンジ カシューナッツ キウイフルーツ 牛肉 くるみ ごま 鮭 鯖 大豆 鶏肉 バナナ 豚肉 松茸 桃 やまいも リンゴ ゼラチン その他).each.with_index do |allergies,i| %>
           <label>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%= f.submit "変更する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
 

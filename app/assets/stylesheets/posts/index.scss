@@ -4,6 +4,7 @@ a {
 
 .main {
   background: #f8f8f8;
+  font-family:'Noto Sans JP', sans-serif;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
@@ -133,7 +134,7 @@ a {
 .ad-title {
   font-size: 5vh;
   margin-bottom: 2vh;
-  font-family:'Noto Sans JP', sans-serif;
+  
 }
 
 .ad-explain {
@@ -177,21 +178,14 @@ a {
   line-height: 1.4;
   font-weight: bold;
   font-family:'Noto Sans JP', sans-serif;
-}
-
-.item-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
-  font-weight: bold;
+  padding-bottom: 20px;
 }
 
 .item-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .item-lists>.list {
@@ -217,7 +211,7 @@ a {
 }
 
 .item-name {
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 
 .item-price {
