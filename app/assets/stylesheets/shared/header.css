@@ -3,7 +3,6 @@
 }
 .app-text {
   margin: 0px 0px;
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
   color: darkgray;
 }
 
@@ -15,6 +14,7 @@
   background-color :white;
   position: fixed;
   z-index: 9999;
+  font-family:'Noto Sans JP', sans-serif;
 }
 
 
@@ -37,13 +37,16 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
+  margin-left: 500px;
 }
 
 .lists-right {
   display: flex;
   list-style: none;
+}
+
+.lists-right>li {
   align-items: flex-end;
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
 
 
