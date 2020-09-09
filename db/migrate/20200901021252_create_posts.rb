@@ -9,6 +9,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :address          
       t.text :text,                null: false
       t.references :user,          foreign_key: true
+      t.integer :likes_count
       t.timestamps
     end
   end

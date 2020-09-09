@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_002803) do
     t.string "address"
     t.text "text", null: false
     t.bigint "user_id"
+    t.integer "likes_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
