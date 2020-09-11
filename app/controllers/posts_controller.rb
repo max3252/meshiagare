@@ -21,7 +21,8 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.includes(:user).order('created_at DESC')
+    @like = Like.new
   end
 
   def edit

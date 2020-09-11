@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+  
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture 
@@ -27,5 +29,10 @@ class User < ApplicationRecord
   validates :password,
             confirmation: true,
             format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'は英字と数字を含めてください' }
+
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 
 end

@@ -13,8 +13,21 @@
         ¥ <%= @post.price %>
       </span>
       <span class="item-postage">
-     
       </span>
+       <%# いいね %>
+       <div class="like">
+        <% if user_signed_in? %>
+         <% if current_user.already_liked?(@post) %>
+          <%= button_to post_like_path(@post), {method: :delete,class:"favorite-btn"} do %>
+          <%= image_tag "icon_heart.png"  %>
+          <% end %>
+        <% else %>
+          <%= button_to post_likes_path(@post), class:"favorite-btn" do %>
+          <%= image_tag "icon_red_heart.png" %>
+          <% end %>
+        <% end %>
+        <% end %>
+      </div>
     </div>
 
     <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -49,16 +62,6 @@
         </tr>
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%#= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>Favorite 0</span>
-      </div>
-      <div class="thanks-btn">
-        <%#= image_tag "flag.png" ,class:"thanks-face-icon" ,width:"20",height:"20"%>
-        <span>Thanks!!</span>
-      </div>
-    </div>
     <p class="option-warn">
     ※アレルギー情報の記載に関しては、記載漏れ等の可能性もありますので、詳細は店舗様にて各自ご確認をお願いします。<span class="br">
     </span>※投稿された食品はアレルギー症状が発生しないことをお約束するものではありません。ご利用いただくユーザー様の症状の程度や<span class="br">その日の体調により、微量の混入でもご発症される可能性もございます。</span>
@@ -85,20 +88,12 @@
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <strong><%= link_to comment.user.nickname, "#" %>：</strong>
             <%= comment.text %>
           </p>
         <% end %>
       <% end %>
     </div>
-  </div>
-  <div class="links">
-    <a href="#" class="change-item-btn">
-      <＜ previous
-    </a>
-    <a href="#" class="change-item-btn">
-      next ＞> 
-    </a>
   </div>
 </div>
 
