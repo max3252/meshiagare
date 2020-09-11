@@ -63,6 +63,10 @@
     </a>
   </div>
 
+  <div class="chat-room">
+  <a href="/messages/new">message</a>
+  </div>
+
   <div class='feature-contents'>
     <h2 class='title'>
       アプリ開発者の思い
@@ -110,10 +114,11 @@
       <a href="/posts/new">
         <%= image_tag 'post.png' , size: '185x50' ,class: "post-btn-icon" %>
       </a>
+      <!-- 検索機能実装一時中断
       <span class='post-btn-text'>検索</span>
       <a href=" /searches">
         <%= image_tag 'search.png' , size: '185x50' ,class: "post-btn-icon" %>
-      </a>
+      </a> --->
     </div>
 <% else %>
     <div class='post-btn'>
@@ -121,10 +126,11 @@
       <a href="/users/sign_in">
         <%= image_tag 'post.png' , size: '185x50' ,class: "post-btn-icon" %>
       </a>
+      <!-- 検索機能実装一時中断
       <span class='post-btn-text'>検索</span>
       <a href="/users/sign_in">
         <%= image_tag 'search.png' , size: '185x50' ,class: "post-btn-icon" %>
-      </a>
+      </a> -->
     </div>
  <% end %> 
 
