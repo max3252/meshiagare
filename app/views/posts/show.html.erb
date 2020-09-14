@@ -38,7 +38,7 @@
     <div class="item-explain-box">
     <div class="grad-wrap">
       <input id="trigger1" class="grad-trigger" type="checkbox">
-      <div class="grad-item"><span><%= @post.text %></span></div>
+      <div class="grad-item"><span><%= simple_format(@post.text) %></span></div>
       <label class="grad-btn" for="trigger1"></label>
     </div>
     </div>
