@@ -1,10 +1,28 @@
-<h3>mini_talk_app</h3>
+<%= render "devise/shared/second-header" %>
+<div class="message-room">
+<h1>【 Chatroom 】</h1>
+<p class="chat-room-info">アレルギー持ちの方同士の意見交換、情報交換や雑談など日々の生活のリフレッシュを目的とした掲示板です。</p>
+<p class="chat-room-info">不快な言葉遣いなどは避けて皆様との交流をお楽しみください。</p>
+<% if current_user %>
 <%= form_with model: @message do |f| %>
-  <%= f.text_field :text %>
-  <%= f.submit '送信' %>
+  <%= f.text_field :text, placeholder:"50文字まで入力可" ,rows:"1" ,maxlength:"50" %>
+  <%= f.submit 'SEND', class:"send-btn" %>
 <% end %>
-<div id='messages'>
-  <% @messages.reverse_each do |message| %>
-    <p><%= message.text %></p>
-  <% end %>
+<% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+<% end %>
+<div id='messages' class="message-box" >
+  <ul class="message-list">
+    <% @messages.reverse_each do |message| %>
+      <li class="list">
+        <p class="message-user-name"><%= message.user.nickname  %>:</p>
+        <p class="message-text"><%= message.text %></p>
+      </li>
+    <% end %>
+  </ul>
+  <p class="message-maxlength">※表示件数が30件を超えると非表示になります。</p>
+  <%=link_to 'トップページへもどる➔', root_path, class:"return-top-page" %>
 </div>
+</div>
+
+<%= render "devise/shared/second-footer" %>

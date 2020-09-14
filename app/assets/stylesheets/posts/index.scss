@@ -107,21 +107,17 @@ a {
 
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-around;
   padding: 5vh 15vw;
   color: black;
   
 }
 
 .ad-title {
-  font-size: 5vh;
+  font-size: 8vh;
   margin-bottom: 2vh;
   
 }
@@ -129,6 +125,15 @@ a {
 .ad-explain {
   font-size: 4vh;
   line-height: 30px;
+}
+
+.chat-room {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 5vh 15vw;
 }
 
 .cp_link {
@@ -143,6 +148,30 @@ a {
 .cp_link:hover {
 	background-position: -100% 0;
 	color: black;
+}
+
+.chat_link {
+	padding: 0.1em 0.3em;
+	position: relative;
+	display: inline-block;
+	transition: .3s;
+  color: black;
+  font-size: 20px;
+}
+
+.chat_link::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 0;
+	height: 5px;
+	background-color: gold;
+	transition: .3s;
+}
+
+.chat_link:hover::after {
+	width: 100%;
 }
 
 /* 商品一覧 */
@@ -202,27 +231,6 @@ a {
   justify-content: center;
 }
 
-
-.star-btn {
-  display: flex;
-  align-items: center;
-}
-
-.star-icon {
-  height: 2vh;
-  width: 2vh;
-  margin-right: 0.5vw;
-}
-
-.star-count {
-  font-size: 2vh;
-}
-
-/* //商品一覧 */
-
-/* //画面中央の「会員数日本一位」帯部分 */
-
-/* FURIMAの特徴 */
 .feature-contents {
   padding: 5vh 15vw;
   font-family:'Noto Sans JP', sans-serif;
@@ -278,5 +286,3 @@ a {
   object-fit: contain;
 }
 
-
-/* //FURIMAの特徴 */

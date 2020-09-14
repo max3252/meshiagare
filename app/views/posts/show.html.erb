@@ -72,7 +72,7 @@
   <div class="comment-box">
     <% if current_user %>
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
-          <%= form.text_area :text, placeholder: "コメントする", class:"comment-text", rows: "10" %>
+          <%= form.text_area :text, placeholder: "コメントする", class:"comment-text", rows:"10" ,maxlength:"50" %>
           <p class="comment-warn">
             相手のことを考え丁寧なコメントを心がけましょう。
             <br>
