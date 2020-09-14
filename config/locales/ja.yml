@@ -8,7 +8,7 @@ ja:
        age_id: 年齢
        allergies: アレルギー情報
      post:
-       text: テキスト
+       text: メニューの説明
        image: 画像
        name: タイトル
        allergies: アレルギー情報
