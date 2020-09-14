@@ -10,3 +10,8 @@ ja:
      post:
        text: テキスト
        image: 画像
+       name: タイトル
+       allergies: アレルギー情報
+       store_name: お店の名前
+       price: 金額
+       genre_id: ジャンル
