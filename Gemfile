@@ -73,3 +73,5 @@ gem 'image_processing', '~> 1.2'
 gem 'ransack'
 
 gem 'omniauth-google-oauth2'
+
+ gem 'factory_bot_rails'
