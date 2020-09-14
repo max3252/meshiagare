@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: tru
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -15,7 +15,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '01660e2ffedd8675ef04c54a13bcd33bed4648cb6dd5511a048c2e75f3f0afca836b2bf7a7d0e86f4f78e255a287c8a85c92b4456e684ee49a8acd85d7ea0718'
-
+  config.omniauth :google_oauth2,ENV['GOOGLE_CLIENT_ID'],ENV['GOOGLE_CLIENT_SECRET']
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
