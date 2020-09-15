@@ -1,3 +1,12 @@
+.sns-login {
+  padding-top: 10px;
+  display: flex;
+}
+
+.google-icon {
+  margin-right: 5px;
+}
+
 .login-btn {
   width: 50%;
   margin: 0 auto;

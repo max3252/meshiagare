@@ -28,6 +28,7 @@
         <% end %>
         <% end %>
       </div>
+      <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
     </div>
 
     <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -36,7 +37,11 @@
       <%= link_to '削除', post_path(@post.id) , method: :delete, class:'item-destroy' %>
     <% end %> 
     <div class="item-explain-box">
-      <span><%= @post.text %></span>
+    <div class="grad-wrap">
+      <input id="trigger1" class="grad-trigger" type="checkbox">
+      <div class="grad-item"><span><%= simple_format(@post.text) %></span></div>
+      <label class="grad-btn" for="trigger1"></label>
+    </div>
     </div>
     <table class="detail-table">
       <tbody>

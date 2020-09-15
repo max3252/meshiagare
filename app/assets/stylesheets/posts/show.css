@@ -57,7 +57,7 @@
   font-size: 24px;
   color: #FFF;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 1vh 5vw;
 }
 
 .or-text {
@@ -70,13 +70,53 @@
   font-size: 24px;
   color: black;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 1vh 5vw;
 }
 
 .item-explain-box {
   font-size: 18px;
   margin: 40px 0px;
 }
+
+.grad-btn {
+  
+}
+.grad-btn::before {
+  content: "続きを読む";
+  color: coral;
+}
+.grad-item {
+  position: relative;
+  overflow: hidden;
+  height: 80px; /*隠した状態の高さ*/
+}
+.grad-item::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /*グラデーションで隠す高さ*/
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
+  background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
+  content: "";
+}
+.grad-trigger {
+  display: none; /*チェックボックスは常に非表示*/
+}
+.grad-trigger:checked ~ .grad-btn::before {
+  content: "閉じる" /*チェックされていたら、文言を変更する*/
+}
+.grad-trigger:checked ~ .grad-item {
+  height: auto; /*チェックされていたら、高さを戻す*/
+}
+.grad-trigger:checked ~ .grad-item::before {
+  display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
+}
+
+
+
+
 
 .detail-table {
   margin-bottom: 30px;

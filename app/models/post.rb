@@ -23,8 +23,8 @@ class Post < ApplicationRecord
     validates :genre_id
   end
 
-  validates :price, numericality: { greater_than: 1, less_than: 9_999_999, message: 'Out of setting range' }
-  validates :price, format: { with: /\A[0-9]+\z/, message: 'Half-width number' }
+  validates :price, numericality: { greater_than: 1, less_than: 999_999, message: 'を設定範囲内で入力してください(¥1~¥999999)' }
+  validates :price, format: { with: /\A[0-9]+\z/, message: 'は半角数字で入力してください' }
 
   def like_user(user_id)
     likes.find_by(user_id: user_id)
