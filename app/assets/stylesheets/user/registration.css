@@ -15,7 +15,9 @@ h3 {
   display: flex;
 }
 
-
+.google-icon {
+  margin-bottom: 6px;
+}
 
 .form-wrap {
   width: 50%;

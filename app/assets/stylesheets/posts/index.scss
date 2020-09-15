@@ -105,35 +105,47 @@ a {
   margin-top: 20px;
 }
 
-.ad-contents {
+.sub-content {
+  display: flex;
+  justify-content: space-between;
   width: 100vw;
+  margin-left: 30px;
+}
+
+.ad-contents {
+  /*width: 100vw;*/
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 5vh 15vw;
+  padding: 5vh 5vw;
   color: black;
-  
 }
+
+.topic-title {
+  font-size: 8vh;
+}
+
+.chat-room {
+  /* width: 100vw;*/
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: space-around;
+   padding: 5vh 10vw;
+ }
+ 
 
 .ad-title {
   font-size: 8vh;
-  margin-bottom: 2vh;
+  margin-top: 3vh;
   
 }
+
 
 .ad-explain {
   font-size: 4vh;
   line-height: 30px;
-}
-
-.chat-room {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-  padding: 5vh 15vw;
 }
 
 .cp_link {
@@ -143,7 +155,9 @@ a {
 	background-size: 200% auto;
 	transition: .3s;
   color: black;
-  font-size: 20px;
+  /* font-size元々20px*/
+  font-size: 17px;
+  text-decoration: none;
 }
 .cp_link:hover {
 	background-position: -100% 0;
@@ -174,6 +188,26 @@ a {
 	width: 100%;
 }
 
+.app-news {
+  text-align: center;
+  font-family:'Noto Sans JP', sans-serif;
+  padding: 15vh 0;
+}
+
+.news-title {
+  font-size: 8vh;
+  padding-bottom: 20px;
+}
+
+.news-text {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.news-text>span {
+  color: red;
+}
+
 /* 商品一覧 */
 
 .item-contents {
@@ -186,7 +220,7 @@ a {
 }
 
 .item-contents>.title {
-  font-size: 5vh;
+  font-size: 8vh;
   line-height: 1.4;
   font-family:'Noto Sans JP', sans-serif;
   padding-bottom: 20px;
@@ -238,8 +272,7 @@ a {
 
 .feature-contents>.title {
   text-align: center;
-  font-size: 3vh;
-  font-weight: bold;
+  font-size: 8vh;
   margin-bottom: 5vh;
   position: relative;
 }

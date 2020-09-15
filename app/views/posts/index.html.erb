@@ -7,7 +7,7 @@
   </div>
 
  <div class='item-contents'>
-    <h2 class='title'>新着投稿一覧</h2>
+    <h2 class='title'>New posts</h2>
     <ul class='item-lists'>
       <% @posts.each do |post| %>
         <li class='list'>
@@ -35,9 +35,6 @@
              </h3>
             <div class='item-price'>
               <span>99999999円<br>(税込み)</span>
-              <div class='star-btn'>
-                <%#= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
               </div>
             </div>
           </div>
@@ -45,28 +42,36 @@
         <% end %>
         </li>
       <% end %>
-        
     </ul>
     <%= paginate @posts %>
   </div>
  
 </div>
- 
+ <div class="sub-content">
   <div class='ad-contents'>
-    <h2 class='ad-title'>
+    <h2 class='topic-title'>
     Topics
     </h2>
     <a href="http://www.nibiohn.go.jp/eiken/linkdediet/news/FMPro%3F-db=NEWS.fp5&-Format=detail.htm&kibanID=67253&-lay=lay&-Find.html" class="cp_link">
-      ■食物アレルギー新治療法への道、プロバイオティクスで
+      ■ 食物アレルギー新治療法への道、プロバイオティクスで
     </a>
     <a href="https://www.asahi.com/articles/ASM495S04M49UBQU016.html" class="cp_link">
-      ■食物アレルギーの経口免疫療法 なぜまだ「研究」なの？
+      ■ 食物アレルギーの経口免疫療法 なぜまだ「研究」なの？
     </a>
     <a href="https://www.foodallergy.jp/info/%e7%ac%ac21%e5%9b%9e%e9%a3%9f%e7%89%a9%e3%82%a2%e3%83%ac%e3%83%ab%e3%82%ae%e3%83%bc%e7%a0%94%e7%a9%b6%e4%bc%9a%ef%bc%882021%e5%b9%b42%e6%9c%8814%e6%97%a5%e9%96%8b%e5%82%ac%ef%bc%89/" class="cp_link">
-      ■第21回食物アレルギー研究会（2021年2月14日開催）
+      ■ 第21回食物アレルギー研究会（2021年2月14日開催）
+    </a>
+    <a href="https://chosa.itmedia.co.jp/tags/%E9%A3%9F%E7%89%A9%E3%82%A2%E3%83%AC%E3%83%AB%E3%82%AE%E3%83%BC" class="cp_link">
+      ■「食物アレルギー」に関する調査データ｜調査のチカラ
+    </a>
+    <a href="https://tabiho.jp/overseas/popup/home/guide/food-allergy.html" class="cp_link">
+      ■ 食物アレルギーの治療費は海外旅行保険で補償される？
+    </a>
+    <a href="https://allergyportal.jp/" class="cp_link">
+      ■ アレルギー専門Webサイト「アレルギーポータル」
     </a>
     <a href="https://www.allergy-food.jp/" class="cp_link">
-      ■食物アレルギー対応食品の「辻安全食品オンラインショップ」
+      ■ 食物アレルギー対応食品の「辻安全食品オンラインショップ」
     </a>
     <p>Coming soon...</p>
   </div>
@@ -74,13 +79,22 @@
     <h2 class='ad-title'>
     Chatroom
     </h2>
-   <%= image_tag 'chat_room.jpg' , size: '1000x700' %>
+   <%= image_tag 'chat_room.jpg' , size: '500x400' %>
   <a href="/messages/new" class="chat_link">Chatroomへ➔</a>
+  </div>
+  </div>
+
+  <div class="app-news">
+  <h2 class="news-title">News</h2>
+  <ul>
+    <li class="news-text">Meshiagareのホームページができました!! <span>New</span></li>
+    <li class="news-text">Topicsを更新しました!!<span>New</span></li>
+  </ul>
   </div>
 
   <div class='feature-contents'>
     <h2 class='title'>
-      アプリ開発者の思い
+      Hope
     </h2>
     <ul class='feature-lists'>
       <li class='list'>

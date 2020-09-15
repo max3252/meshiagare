@@ -69,10 +69,11 @@
         </tr>
         <tr>
           <th class="detail-item">お店の住所</th>
-          <td class="detail-value"><%= @post.address %></td>
+          <td class="detail-value"><%= @post.address %><a href="https://www.google.co.jp/maps">Googleマップ</a></td>
         </tr>
       </tbody>
     </table>
+    <%= @post.created_at.strftime('%Y/%m/%d') %>
     <p class="option-warn">
     ※アレルギー情報の記載に関しては、記載漏れ等の可能性もありますので、詳細は店舗様にて各自ご確認をお願いします。<span class="br">
     </span>※投稿された食品はアレルギー症状が発生しないことをお約束するものではありません。ご利用いただくユーザー様の症状の程度や<span class="br">その日の体調により、微量の混入でもご発症される可能性もございます。</span>
@@ -101,6 +102,7 @@
           <p>
             <strong><%= link_to comment.user.nickname, "#" %>：</strong>
             <%= comment.text %>
+            <%= comment.created_at.strftime('%Y/%m/%d') %>
           </p>
         <% end %>
       <% end %>
