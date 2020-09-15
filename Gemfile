@@ -75,3 +75,5 @@ gem 'ransack'
 gem 'omniauth-google-oauth2'
 
  gem 'factory_bot_rails'
+
+ gem 'kaminari'

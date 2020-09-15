@@ -28,7 +28,13 @@
         <% end %>
         <% end %>
       </div>
-      <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
+      <%= link_to image_tag('twitter.icon.jpg', size: '40x40'), "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank',  class: "twitter-icon" %>
+      <a href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+      <%= image_tag 'facebook.icon.png' , size: '40x40', class: "facebook-icon"  %>
+      </a>
+      <a href="javascript:window.open('http://line.me/R/msg/text/?'+encodeURIComponent(document.title)+'%20'+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
+      <%= image_tag 'line.icon.png' , size: '40x40' , class: "line-icon" %>
+      </a>
     </div>
 
     <% if user_signed_in? && current_user.id == @post.user_id %>

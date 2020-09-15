@@ -79,7 +79,6 @@
 }
 
 .grad-btn {
-  
 }
 .grad-btn::before {
   content: "続きを読む";
@@ -164,6 +163,14 @@
 }
 
 .favorite-btn>span {
+  margin-right: 5px;
+}
+
+.twitter-icon {
+  margin-right: 5px;
+}
+
+.facebook-icon {
   margin-right: 5px;
 }
 
