@@ -28,6 +28,7 @@
         <% end %>
         <% end %>
       </div>
+      <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
     </div>
 
     <% if user_signed_in? && current_user.id == @post.user_id %>
