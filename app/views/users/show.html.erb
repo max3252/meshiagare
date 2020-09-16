@@ -1,0 +1,46 @@
+<%= render "devise/shared/second-header" %>
+<div class="mypage">
+<h1>MyPage</h1>
+<p class="user-name"><%= @user.nickname %> さん</p>
+<h2 class='user-post'><%= @user.nickname %>さんの投稿一覧</h2>
+    <ul class='item-lists'>
+      <% @posts.each do |post| %>
+        <li class='list'>
+          <%= link_to  post_path(post.id) do %>
+            <div class='item-img-content'>
+              <%= image_tag post.image, class: "item-img" %>
+              <% end %>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= post.name %>
+                </h3>
+                <div class='item-price'>
+                  <span><%= post.price %>円</span>
+                </div>
+              </div>
+            </div>
+        </li>
+      <%end%>
+    </ul>
+  <%= paginate @posts %>
+<table class="mypage-table">
+      <tbody>
+        <tr>
+          <th class="mypage-item">ニックネーム</th>
+          <td class="mypage-value"><%= @user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="mypage-item">アレルギー情報</th>
+          <td class="mypage-value"><%= @user.allergies %></td>
+        </tr>
+        <tr>
+          <th class="mypage-item">住まい</th>
+          <td class="mypage-value"><%= @user.prefecture.name %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%=link_to 'Top page ➔', root_path, class:"return-top-page" %>
+</div>
+
+
+<%= render "devise/shared/second-footer" %>

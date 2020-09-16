@@ -3,8 +3,8 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   
   def index
-    @posts = Post.all.page(params[:page]).per(10)
-    @posts = Post.includes(:user).order('created_at DESC').page(params[:page]).per(10)
+    @posts = Post.all.page(params[:page]).per(15)
+    @posts = Post.includes(:user).order('created_at DESC').page(params[:page]).per(15)
   end
 
   def new
@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order('created_at DESC')
-    @like = Like.new
   end
 
   def edit

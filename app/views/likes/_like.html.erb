@@ -1,11 +1,18 @@
-<div class="like-link" id="like-link-<%= post.id %>">
-  <% if current_user.likes.find_by(post_id: post.id) %>
-    <%= link_to unlike_path(post.id), method: :delete, remote: true do %>
-        <div class = "iine__button">❤️<%= post.likes.count %></div>
+<% if user_signed_in? %>
+
+  <% unless @post.like_user(current_user.id).blank? %>
+    <%= link_to post_like_path(post_id: @post.id, id: @post.likes[0].id), method: :delete, remote: true do %>
+      <div class="vertical_like">
+       <%= image_tag "icon_red_heart.png", size: '40x40' %>
+         <%= @post.likes_count %>
+      </div>
     <% end %>
   <% else %>
-    <%= link_to like_path(post.id), method: :post, remote: true do %>
-        <div class = "iine__button">♡️<%= post.likes.count %></div>
+    <%= link_to post_likes_path(@post.id), method: :post, remote: true do %>
+      <div class="vertical_like">
+        <%= image_tag "icon_heart.png", size: '40x40' %>
+         <%= @post.likes_count %>
+      </div>
     <% end %>
   <% end %>
-</div>
+<% end %>

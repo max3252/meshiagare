@@ -14,20 +14,12 @@
       </span>
       <span class="item-postage">
       </span>
-       <%# いいね %>
-       <div class="like">
-        <% if user_signed_in? %>
-         <% if current_user.already_liked?(@post) %>
-          <%= button_to post_like_path(@post), {method: :delete,class:"favorite-btn"} do %>
-          <%= image_tag "icon_heart.png"  %>
-          <% end %>
-        <% else %>
-          <%= button_to post_likes_path(@post), class:"favorite-btn" do %>
-          <%= image_tag "icon_red_heart.png" %>
-          <% end %>
-        <% end %>
-        <% end %>
-      </div>
+    </div>
+
+    <div class="like">
+    <div id="likes_buttons<%= @post.id %>">
+ <%= render partial: 'likes/like', locals: { post: @post, like: @like} %>
+    </div>
       <%= link_to image_tag('twitter.icon.jpg', size: '40x40'), "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank',  class: "twitter-icon" %>
       <a href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
       <%= image_tag 'facebook.icon.png' , size: '40x40', class: "facebook-icon"  %>
@@ -35,7 +27,7 @@
       <a href="javascript:window.open('http://line.me/R/msg/text/?'+encodeURIComponent(document.title)+'%20'+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
       <%= image_tag 'line.icon.png' , size: '40x40' , class: "line-icon" %>
       </a>
-    </div>
+      </div>
 
     <% if user_signed_in? && current_user.id == @post.user_id %>
       <%= link_to '編集', edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
@@ -53,7 +45,7 @@
       <tbody>
         <tr>
           <th class="detail-item">投稿者</th>
-          <td class="detail-value"><%= @post.user.nickname %></td>
+          <td class="detail-value"><%= link_to @post.user.nickname, "/users/#{@post.user_id}" %></td>
         </tr>
         <tr>
           <th class="detail-item">ジャンル</th>
@@ -61,7 +53,7 @@
         </tr>
         <tr>
           <th class="detail-item">アレルギー情報</th>
-          <td class="detail-value"><%= @post.allergies %>不使用<span>※</span></td>
+          <td class="detail-value"><%= @post.allergies %> 不使用<span>※</span></td>
         </tr>
         <tr>
           <th class="detail-item">お店の名前</th>
@@ -69,11 +61,11 @@
         </tr>
         <tr>
           <th class="detail-item">お店の住所</th>
-          <td class="detail-value"><%= @post.address %><a href="https://www.google.co.jp/maps">Googleマップ</a></td>
+          <td class="detail-value"><%= @post.address %><a href="https://www.google.co.jp/maps", target="_blank">Googleマップ</a></td>
         </tr>
       </tbody>
     </table>
-    <%= @post.created_at.strftime('%Y/%m/%d') %>
+    <p><%= @post.created_at.strftime('%Y/%m/%d') %>に投稿</p>
     <p class="option-warn">
     ※アレルギー情報の記載に関しては、記載漏れ等の可能性もありますので、詳細は店舗様にて各自ご確認をお願いします。<span class="br">
     </span>※投稿された食品はアレルギー症状が発生しないことをお約束するものではありません。ご利用いただくユーザー様の症状の程度や<span class="br">その日の体調により、微量の混入でもご発症される可能性もございます。</span>
@@ -100,7 +92,7 @@
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
-            <strong><%= link_to comment.user.nickname, "#" %>：</strong>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
             <%= comment.created_at.strftime('%Y/%m/%d') %>
           </p>

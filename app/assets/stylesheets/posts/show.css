@@ -114,7 +114,9 @@
   display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
 }
 
-
+.like {
+  display: flex;
+}
 
 
 

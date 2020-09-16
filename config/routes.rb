@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :messages, only: [:new, :create]
-
+  resources :users, only: [:show]
 end

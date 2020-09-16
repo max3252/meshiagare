@@ -1,0 +1,47 @@
+.mypage {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-family:'Noto Sans JP', sans-serif;
+}
+
+.user-name {
+  font-size: 3vh;
+  padding-top: 8px;
+}
+
+.mypage>h1 {
+  font-size: 8vh;
+  text-align: center;
+}
+
+.user-post {
+  padding: 30px 0 0 10px;
+  font-size: 20px;
+}
+
+.mypage-table {
+  margin-top: 30px;
+  width: 50%;
+}
+
+.mypage-item {
+  width: 80px;
+  background-color: lemonchiffon;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mypage-value {
+  width: 100px;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+
+.return-top-page {
+  text-decoration: none;
+  margin: 40px 0;
+}
