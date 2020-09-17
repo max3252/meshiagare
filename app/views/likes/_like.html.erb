@@ -4,14 +4,14 @@
     <%= link_to post_like_path(post_id: @post.id, id: @post.likes[0].id), method: :delete, remote: true do %>
       <div class="vertical_like">
        <%= image_tag "icon_red_heart.png", size: '40x40' %>
-         <%= @post.likes_count %>
+       
       </div>
     <% end %>
   <% else %>
     <%= link_to post_likes_path(@post.id), method: :post, remote: true do %>
       <div class="vertical_like">
         <%= image_tag "icon_heart.png", size: '40x40' %>
-         <%= @post.likes_count %>
+ 
       </div>
     <% end %>
   <% end %>

@@ -250,24 +250,8 @@
   padding: 20px 0 10px 10px;
 }
 
-.links {
-  display: flex;
-  justify-content: space-between;
-  width: 50vw;
-
+.comments>p:nth-child(n+21) {
+  display: none;
 }
 
-.change-item-btn {
-  font-size: 30px;
-  text-decoration: none;
-  color: gold;
-}
 
-.another-item {
-  display: block;
-  margin: 30px 0px 8px;
-  color: gold;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 23px;
-}

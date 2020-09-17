@@ -10,5 +10,10 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :messages, only: [:new, :create]
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    collection do
+      get :likes
+    end
+  end
+  
 end
