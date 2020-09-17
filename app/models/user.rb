@@ -32,10 +32,6 @@ class User < ApplicationRecord
             format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'は英字と数字を含めてください' }
 
 
-  def already_liked?(post)
-    self.likes.exists?(post_id: post.id)
-  end
-
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
    # sns認証したことがあればアソシエーションで取得

@@ -18,7 +18,7 @@
 
     <div class="like">
     <div id="likes_buttons<%= @post.id %>">
- <%= render partial: 'likes/like', locals: { post: @post, like: @like} %>
+      <%= render partial: 'likes/like', locals: { post: @post, like: @like} %>
     </div>
       <%= link_to image_tag('twitter.icon.jpg', size: '40x40'), "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank',  class: "twitter-icon" %>
       <a href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href),'sharewindow','width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!');">
