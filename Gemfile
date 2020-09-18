@@ -79,3 +79,7 @@ gem 'omniauth-google-oauth2'
  gem 'kaminari'
 
  gem 'clipboard-rails'
+
+ group :production do
+  gem 'rails_12factor'
+end

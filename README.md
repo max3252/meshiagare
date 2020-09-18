@@ -31,6 +31,10 @@ Things you may want to cover:
 
 - has_many :posts
 - has_many :comments
+- has_many :likes
+- has_many :like_posts 
+- has_many :messages
+- has_many :sns_credentials
 
 ## posts テーブル
 
@@ -50,6 +54,7 @@ Things you may want to cover:
 
 - belongs_to :user
 - has_many :comments
+- has_many :likes
 
 ## comments テーブル
 
@@ -65,6 +70,42 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :post
 
+## likes テーブル
+
+| Column  | Type       | Options  |
+| ------- | ---------- | ---------|
+| user_id | integer    |          |
+| post_id | integer    |          |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
+
+## messages テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| text    | text       | null: false                    |
+
+
+### Association
+
+- belongs_to :user
+
+## comments テーブル
+
+| Column   | Type       | Options           |
+| -------  | ---------- | ----------------- |
+| provider | string     |                   |
+| uid      | string     |                   |
+| user     | references | foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
 
 * Database initialization
 
