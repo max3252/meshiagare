@@ -60,7 +60,6 @@ gem 'devise'
 
 gem "aws-sdk-s3", require: false
 
-gem 'bxslider-rails'
 gem 'jquery-rails'
 
 gem 'active_hash'
@@ -70,16 +69,14 @@ gem 'rails-i18n'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
-gem 'ransack'
 
 gem 'omniauth-google-oauth2'
 
- gem 'factory_bot_rails'
+gem 'factory_bot_rails'
 
- gem 'kaminari'
+gem 'kaminari'
 
- gem 'clipboard-rails'
 
- group :production do
+group :production do
   gem 'rails_12factor'
 end
