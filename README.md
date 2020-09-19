@@ -94,7 +94,7 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## comments テーブル
+## sns_credentials テーブル
 
 | Column   | Type       | Options           |
 | -------  | ---------- | ----------------- |

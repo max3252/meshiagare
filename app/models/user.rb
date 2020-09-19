@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
   has_many :messages
-  has_many :sns_credentials
+  belongs_to :sns_credentials
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture 
