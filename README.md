@@ -1,117 +1,136 @@
-## README
+# アプリケーション名: Meshiagare
 ![meshiagare](https://user-images.githubusercontent.com/68981701/93659173-94a63d00-fa7d-11ea-951c-535d41c2f1bc.png)
 
-<h1 align="center">Meshiagare</h1>
+## 概要
+ポートフォリオとして開発したオリジナルアプリになります。
+アプリの内容は食物アレルギー持ちの方専用のアレルゲン不使用食材の情報共有を目的とした写真投稿サービスになります。
+飲食店の食べ物を写真に撮って共有し、アレルギー情報を載せることができます。
+写真投稿以外にもチャット機能で他のユーザーとの情報交換を目的とした交流や植物アレルギー情報のトピックスも掲載しています。
+
+## 本番環境
+[アプリURL]("https://meshiagare.herokuapp.com/")
+下記テストユーザーでログインできます。
+・Basic認証：ID admin パスワード 3991 , メールアドレス：ttt@ttt.com , パスワード：a123123
+
+## 制作背景
+ニッチなジャンルのアプリを制作したいという思いで開発しました。
+当初は飲食系の共有アプリにしようかと思いましたが、アプリとして開発するには類似アプリや完成度の高いアプリが他に沢山あるので、今更感のあるアプリになってしまうと思い、
+ジャンルを絞ることにしました。そこで着目したのが食物アレルギーでした。自分自身は食物アレルギーは今のところ無く、関心のない世界でした。
+情報を調べていくうちに食物アレルギー持ちの人口は昔と比べ上昇傾向にあると知り、専門サイトもごくわずかでしたが、もし専門サイトがあれば必要としている人達がいると感じ制作する思いに至りました。
+このアプリで肩身が狭い思いをしている人の生活が少しでも豊かになれば、と思います。
+
+## 利用方法
+新規ユーザー登録(Googleアカウントで登録も可)をして、アレルゲン不使用のメニューの情報を写真とアレルギー情報を記載して投稿/共有します。主要SNSにもシェアすることができます。(Twitter,facebook,Line)
+
+## 目指した課題解決
+食物アレルギーを持ちの方を対象とし、アレルゲン物質不使用のお店を探すには通常の口コミサイトだと探す手間がかかる問題を解決することを目的としたアプリです。
+
+# 洗い出した要件
+<ul>優先順位<高>
+<li>機能：ユーザー管理機能</li>
+<p>目的：ユーザーの情報を記載するため</p>
+<p>詳細：deviseを用いて機能実装をする</p>
+<p>見積もり：1日</p>
+<li>機能：写真投稿機能</li>
+<p>目的：料理の情報を写真も一緒に投稿することでアプリの見た目を良くするため</p>
+<p>詳細：画像プレビュー機能を付ける。今後は複数枚一度に投稿できるように実装していく</p>
+<p>見積もり：1日</p>
+<li>機能：コメント機能</li>
+<p>目的：投稿に対してコメントを付けて、興味を持ったユーザーとの交流と情報交換をするため</p>
+<p>詳細：ログイン状態のユーザーであればコメントができる</p>
+<p>見積もり：1日</p>
+<li>機能：複数チェックボックス機能</li>
+<p>目的：アレルギー情報を記載するため</p>
+<p>詳細：投稿時に複数チェックボックスでアレルギー情報を選択できる</p>
+<p>見積もり：2日</p>
+<li>機能：いいね機能</li>
+<p>目的：投稿に対していいねをしてマイページで確認できるようにするため</p>
+<p>詳細：jQueryを用いて非同期で実装</p>
+<p>見積もり:4日</p>
+</ul>
+
+<ul>優先順位<中>
+<li>機能：チャット機能</li>
+<p>目的：リアルタイムチャットで情報交換以外にユーザー同士気軽に交流する場を作るため</p>
+<p>詳細：Action Cableを使用して実装する</p>
+<p>見積もり：1日</p>
+<li>機能：SNSシェア機能</li>
+<p>目的：投稿の拡散力を上げるため</p>
+<p>詳細：投稿詳細ページのアイコンから書くSNSの投稿画面に遷移できる</p>
+<p>見積もり：1日</p>
+<li>機能：SNSログイン機能</li>
+<p>目的：新規登録、ログイン時の作業量を軽減するため</p>
+<p>詳細：APIを用いて実装</p>
+<p>見積もり：1日</p>
+</ul>
 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-#テーブル設計
-
-## users テーブル
-
-| Column           | Type    | Options     |
-| ---------------- | ------  | ----------- |
-| nickname         | string  | null: false |
-| email            | string  | null: false |
-| password         | string  | null: false |
-| prefecture_id    | integer | null: false |
-| gender_id        | integer | null: false |
-| age_id           | integer | null: false |
-| allergies        | text    | null: false |
+# 開発環境
+<ul>
+<li>Ruby 2.6.5, Rails 6.0.0</li>
+<li>MySQL</li>
+<li>SCSS,jQuery</li>
+<li>RSpec</li>
+<li>AWS(S3)</li>
+</ul>
 
 
-### Association
-
-- has_many :posts
-- has_many :comments
-- has_many :likes
-- has_many :like_posts 
-- has_many :messages
-- has_many :sns_credentials
-
-## posts テーブル
-
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| image            | string     | null: false                    |
-| name             | string     | null: false                    |
-| genre_id         | integer    | null: false                    |
-| allergies        | text       | null: false                    |
-| store_name       | string     | null: false                    |
-| price            | integer    | null: false                    |
-| address          | string     |                                |
-| text             | text       | null: false                    |
-| user             | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- has_many :comments
-- has_many :likes
-
-## comments テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| post    | references | null: false, foreign_key: true |
-| text    | text       | null: false                    |
+# 実装した機能
+<ul>ユーザー機能
+<li>deviseを使用</li>
+<li>SNSアカウントログイン機能(Google)</li>
+<li>複数チェックボックス機能</li>
+<li>マイページ実装</li>
+<li>投稿一覧表示</li>
+<li>お気に入り一覧表示</li>
+</ul>
 
 
-### Association
+<ul>投稿機能
+<li>投稿一覧表示、詳細表示、編集、削除機能</li>
+<li>画像プレビュー機能</li>
+<li>複数チェックボックス機能</li>
+<li>いいね機能(非同期)</li>
+<li>SNSシェア機能</li>
+<li>コメント機能</li>
+</ul>
 
-- belongs_to :user
-- belongs_to :post
-
-## likes テーブル
-
-| Column  | Type       | Options  |
-| ------- | ---------- | ---------|
-| user_id | integer    |          |
-| post_id | integer    |          |
-
-### Association
-
-- belongs_to :user
-- belongs_to :post
-
-## messages テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| text    | text       | null: false                    |
+<ul>チャット機能(非同期)
+<li>リアルタイムチャット機能</li>
+</ul>
 
 
-### Association
-
-- belongs_to :user
-
-## sns_credentials テーブル
-
-| Column   | Type       | Options           |
-| -------  | ---------- | ----------------- |
-| provider | string     |                   |
-| uid      | string     |                   |
-| user     | references | foreign_key: true |
+<ul>トッピクス機能
+<li>アレルギー関連の記事やサイトを閲覧できる</li>
+</ul>
 
 
-### Association
+<ul>ページネーション機能
+<li>kaminariを使用</li>
+</ul>
 
-- belongs_to :user
 
-* Database initialization
+<ul>テスト機能
+<li>RSpecを使用</li>
+</ul>
+<p>Basic認証機能</p>
 
-* How to run the test suite
+# 実装予定の機能
+<ul>
+<li>詳細検索機能</li>
+<li>複数写真投稿機能</li>
+<li>通知機能</li>
+<li>アプリへのお問い合わせ機能</li>
+<li>フォロー機能</li>
+</ul>
 
-* Services (job queues, cache servers, search engines, etc.)
+# データベース設計
+![ER図]("https://user-images.githubusercontent.com/68981701/93660582-8f4fef00-fa8b-11ea-912f-160c95956b0d.png")
 
-* Deployment instructions
-
-* ...
+# ローカルでの動作方法
+<p>ターミナルにて以下のコマンドを実行</p>
+<p>1. git clone <git@github.com:max3252/meshiagare.git> </p>
+<p>2. bundle install </p>
+<p>3. rails db:create </p>
+<p>4. rails db:migrate </p>
+<p>5. rails s </p>
