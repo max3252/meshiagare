@@ -68,9 +68,10 @@
 <li>投稿一覧表示</li>
 <li>お気に入り一覧表示</li>
 </ul>
-![新規ユーザー登録 デモ](https://user-images.githubusercontent.com/68981701/93728005-e58e7080-fbf8-11ea-878c-d29cb4424eca.gif)<br>
-![ログイン デモ](https://user-images.githubusercontent.com/68981701/93728117-782f0f80-fbf9-11ea-91ce-500e519d5953.gif)<br>
-![マイページ デモ](https://user-images.githubusercontent.com/68981701/93728259-2044d880-fbfa-11ea-8933-b8e5441eebab.gif)
+
+[新規ユーザー登録 デモ](https://user-images.githubusercontent.com/68981701/93728005-e58e7080-fbf8-11ea-878c-d29cb4424eca.gif)<br>
+[ログイン デモ](https://user-images.githubusercontent.com/68981701/93728117-782f0f80-fbf9-11ea-91ce-500e519d5953.gif)<br>
+[マイページ デモ](https://user-images.githubusercontent.com/68981701/93728259-2044d880-fbfa-11ea-8933-b8e5441eebab.gif)
 
 <ul>■ 投稿機能
 <li>投稿一覧表示、詳細表示、編集、削除機能</li>
@@ -80,25 +81,29 @@
 <li>SNSシェア機能</li>
 <li>コメント機能</li>
 </ul>
-![投稿機能 デモ](https://user-images.githubusercontent.com/68981701/93728545-56cf2300-fbfb-11ea-92b4-ebcd5ae9fdd2.gif)
+
+[投稿機能 デモ](https://user-images.githubusercontent.com/68981701/93728545-56cf2300-fbfb-11ea-92b4-ebcd5ae9fdd2.gif)
 
 <ul>■ チャット機能(非同期)
 <li>リアルタイムチャット機能(Action Cableを使用)</li>
 </ul>
-![リアルタイムチャット機能 デモ](https://user-images.githubusercontent.com/68981701/93728712-0ad0ae00-fbfc-11ea-80b9-e6ec6e1b9fe6.gif)
+
+[リアルタイムチャット機能 デモ](https://user-images.githubusercontent.com/68981701/93728712-0ad0ae00-fbfc-11ea-80b9-e6ec6e1b9fe6.gif)
 
 
 <ul>■ トッピクス機能
 <li>アレルギー関連の記事やサイトを閲覧できる</li>
 </ul>
-![トピックス機能 デモ](https://user-images.githubusercontent.com/68981701/93728797-964a3f00-fbfc-11ea-9174-21163578b0ca.gif)
+
+[トピックス機能 デモ](https://user-images.githubusercontent.com/68981701/93728797-964a3f00-fbfc-11ea-9174-21163578b0ca.gif)
 
 
 
 <ul>■ ページネーション機能
 <li>kaminariを使用</li>
 </ul>
-![ページネーション機能 デモ](https://user-images.githubusercontent.com/68981701/93728871-ecb77d80-fbfc-11ea-8ff7-0bedc29ed12a.gif)
+
+[ページネーション機能 デモ](https://user-images.githubusercontent.com/68981701/93728871-ecb77d80-fbfc-11ea-8ff7-0bedc29ed12a.gif)
 
 <ul>■ テスト機能
 <li>RSpecを使用</li>
@@ -107,7 +112,8 @@
 <ul>■ 認証機能
 <li>Basic認証</li>
 </ul>
-![Basic認証デモ](https://user-images.githubusercontent.com/68981701/93727455-3781c700-fbf6-11ea-91f4-2cd800702c0c.gif)
+
+[Basic認証デモ](https://user-images.githubusercontent.com/68981701/93727455-3781c700-fbf6-11ea-91f4-2cd800702c0c.gif)
 
 # 工夫したポイント
 <ul>
