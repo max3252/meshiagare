@@ -102,6 +102,7 @@
 <li>Basic認証</li>
 </ul>
 ![画面収録 2020-09-19 17 39 52 mov](https://user-images.githubusercontent.com/68981701/93727455-3781c700-fbf6-11ea-91f4-2cd800702c0c.gif)
+
 # 工夫したポイント
 <ul>
 <li>ビューに使用する色の種類を少なくし、色彩学を意識して選定しました。</li>
