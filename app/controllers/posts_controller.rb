@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
-  
+
   def index
     @posts = Post.all.page(params[:page]).per(15)
     @posts = Post.includes(:user).order('created_at DESC').page(params[:page]).per(15)
@@ -44,12 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
- 
-
   private
 
   def post_params
-    params.require(:post).permit(:image, :name, :genre_id , :store_name, :price, :address, :text, allergies: []).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :name, :genre_id, :store_name, :price, :address, :text, allergies: []).merge(user_id: current_user.id)
   end
 
   def set_post
@@ -59,6 +57,4 @@ class PostsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-
 end
-

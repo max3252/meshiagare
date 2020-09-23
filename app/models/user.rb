@@ -10,9 +10,9 @@ class User < ApplicationRecord
   has_many :like_posts, through: :likes, source: :post
   has_many :messages
   has_many :sns_credentials
-  
+
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture 
+  belongs_to_active_hash :prefecture
   belongs_to_active_hash :gender
   belongs_to_active_hash :age
 
@@ -31,15 +31,14 @@ class User < ApplicationRecord
             confirmation: true,
             format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'は英字と数字を含めてください' }
 
-
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
-   # sns認証したことがあればアソシエーションで取得
-   # 無ければemailでユーザー検索して取得orビルド(保存はしない)
-   user = User.where(email: auth.info.email).first_or_initialize(
-     nickname: auth.info.name,
-       email: auth.info.email
-   )
+    # sns認証したことがあればアソシエーションで取得
+    # 無ければemailでユーザー検索して取得orビルド(保存はしない)
+    user = User.where(email: auth.info.email).first_or_initialize(
+      nickname: auth.info.name,
+      email: auth.info.email
+    )
     # userが登録済みであるか判断
     if user.persisted?
       sns.user = user
@@ -47,5 +46,4 @@ class User < ApplicationRecord
     end
     { user: user, sns: sns }
   end
-
 end

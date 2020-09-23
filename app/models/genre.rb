@@ -11,6 +11,6 @@ class Genre < ActiveHash::Base
     { id: 9, name: 'そば、うどん' },
     { id: 10, name: '鉄板焼' },
     { id: 11, name: '寿司' },
-    { id: 12, name: '焼き肉' },
+    { id: 12, name: '焼き肉' }
   ]
 end

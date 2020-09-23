@@ -20,20 +20,19 @@ describe Post do
         @post.address = ''
         expect(@post).to be_valid
       end
-
     end
 
     context '投稿がうまくいかないとき' do
       it 'imageが空では投稿できない' do
         @post.image = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("画像を入力してください")
+        expect(@post.errors.full_messages).to include('画像を入力してください')
       end
 
       it 'nameが空では投稿できない' do
         @post.name = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("タイトルを入力してください")
+        expect(@post.errors.full_messages).to include('タイトルを入力してください')
       end
 
       it 'genre_idを選択しなければ投稿できない' do
@@ -57,7 +56,7 @@ describe Post do
       it 'priceが空では投稿できない' do
         @post.price = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("金額を入力してください")
+        expect(@post.errors.full_messages).to include('金額を入力してください')
       end
 
       it 'priceは¥1以上でなければ投稿できない' do
@@ -81,9 +80,8 @@ describe Post do
       it 'textが空では投稿できない' do
         @post.text = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("メニューの説明を入力してください")
+        expect(@post.errors.full_messages).to include('メニューの説明を入力してください')
       end
-
     end
   end
 end

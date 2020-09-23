@@ -3,7 +3,7 @@ FactoryBot.define do
     name { 'content' }
     genre_id { '2' }
     allergies { '卵' }
-    store_name { 'store'}
+    store_name { 'store' }
     price { '1000' }
     address { '東京都' }
     text { 'info' }

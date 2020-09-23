@@ -4,10 +4,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :genre
-  
+
   with_options presence: true do
     validates :image
     validates :name
@@ -27,6 +26,5 @@ class Post < ApplicationRecord
 
   def like_user(user_id)
     likes.find_by(user_id: user_id)
-   end
-
+  end
 end
