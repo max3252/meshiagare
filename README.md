@@ -55,7 +55,7 @@
 <li>MySQL</li>
 <li>SCSS,jQuery</li>
 <li>RSpec</li>
-<li>AWS(S3)</li>
+<li>AWS(S3,EC2)</li>
 </ul>
 
 
